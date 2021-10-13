@@ -18,3 +18,9 @@ let callback = (entries, observer)=>{
 }
 let observer = new IntersectionObserver(callback, options);
 observer.observe(document.querySelector('#cafeVideo'));
+
+var moment = require('moment'); // require
+
+var myDate = new Date();
+var updatedDate = moment(myDate).format('dddd');
+console.log(updatedDate);
