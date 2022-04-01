@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <meta charset="UTF-8">
+    <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>MOCA CAFE</title>
       <link rel="preconnect" href="https://fonts.gstatic.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300&family=Jost:ital,wght@0,200;0,400;1,200&family=Merienda&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+      <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
       <link rel="stylesheet" href="css/index.css">
     </head>
     <body>
         <section class="nav">
             <ul class="components">
-                <li><a href="#">O nás</a></li>
-                <li><a href="#">Ponuka</a></li>
-                <li><a href="#">Priestory</a></li>
-                <li><a href="#">Kontakt</a></li>
-            </ul>
+                <li><a href="#aboutUs">O nás</a></li>
+                <li><a href="#reservation">Rezervácia</a></li>
+                <li><a href="#menu">Ponuka</a></li>
+                <li><a href="#gallery">Priestory</a></li>
+                <li><a href="#footer-text">Kontakt</a></li>
+            </ul> 
         </section>
-        <section class="header">
+        <section id="header">
             <div class="main_title fadeIn">
                 <h1>MOCA CAFE</h1>
                 <p>tvoja obľúbená kaviareň</p>
@@ -29,14 +31,19 @@
                     <p>-------Nájdete nás</p>
                 </div>
                 <div class="icons_box"> 
-                       <a href="#"><i class="fa fa-facebook-f"></i></a>
-                       <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                       <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                       <a href="https://www.facebook.com/"><i class="fa fa-facebook-f"></i></a>
+                       <a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                       <a href="https://www.twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                 </div>
             </aside>   
         </section>
+        
+        <div class="fixed-arrow">
+          <a href="#header"><img src="./img/arrow.png" alt="arrow"></a>
+        </div>
+
         <section class="main_sec">
-            <div class="aboutUs">
+            <div id="aboutUs">
                 <div class="aboutUs_text">
                     <h2>O nás</h2>
                     <h3>Vitajte v MOCA CAFE</h3>
@@ -47,11 +54,12 @@
                         beans cotton candy oat cake pie. Jelly-o apple pie cupcake.</p>
                 </div>
                 <div class="auto_video">
-                    <video id="cafeVideo" muted width="600px" height="520px" >
+                    <div class="video">
+                    <video id="cafeVideo" muted width="100%" height="100%" >
                         <source src="img/video.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                     </video>
-                    <div class="square"></div>
+                </div>
                 </div>
             </div> 
             <div class="titles">
@@ -64,7 +72,7 @@
                     <p>Príjemné prostredie</p> 
                  </div>
                  <div class="each">
-                    <img src="img/booking.png" alt="cup_icon"> 
+                    <img src="img/reserve.png" alt="cup_icon"> 
                     <p>Online rezervácia</p> 
                  </div>
                  <div class="each">
@@ -72,7 +80,403 @@
                     <p>Pet friendly</p> 
                  </div>
             </div>
+            <div id="reservation">
+                <h2>Rezervácia</h2>
+                <h3>rezervujte si svoj stôl</h3>
+                <div class="form-reserve">
+                    
+               
+                    <form  method="post">
+                        <div id="form_section">
+                            <input type="text" name="firstname" placeholder="Meno" required="true"></input>
+                            <input type="text" name="lastname" placeholder="Priezvisko" required="true"></input>
+                            <input type="email" name="email" placeholder="Email" required="true"></input>
+                    <input type="tel" name="phone" placeholder="Telefónne číslo" required="true"></input>
+                        </div>
+                        <div id="form_section">
+                            <div class="select">
+                           
+                        
+                        <!-- <datalist id="tables">
+                            <option value="Stôl 1">
+                            <option value="Stôl 2">
+                            <option value="Stôl 3">
+                            <option value="Stôl 4">
+                            <option value="Stôl 5">
+                        </datalist> -->
+                        
+                            <select name="slct" id="slct">
+                                <option disabled selected>Vyberte stôl</option>
+                                <option value="1">1. interiér</option>
+                                <option value="2">2. interiér</option>
+                                <option value="3">3. interiér</option>
+                                <option value="4">4. terasa</option>
+                                <option value="5">5. terasa</option>
+                            </select>
+                            
+                            </div>
+
+
+                            <div class="wrapper">
+                                <label for="datepicker">Zvoľte dátum
+                                    <input type="text" id="datepicker" autocomplete="off">
+                                </label>	
+                            </div>
+
+
+                            <div class="select">
+                           
+                        
+                                <!-- <datalist id="tables">
+                                    <option value="Stôl 1">
+                                    <option value="Stôl 2">
+                                    <option value="Stôl 3">
+                                    <option value="Stôl 4">
+                                    <option value="Stôl 5">
+                                </datalist> -->
+                                
+                                    <select name="slct" id="slct">
+                                        <option disabled selected>Zvoľte čas:</option>
+                                        <option value="1">9:00</option>
+                                        <option value="2">9:30</option>
+                                        <option value="3">10:00</option>
+                                        <option value="4">10:30</option>
+                                        <option value="5">11:00</option>
+                                        <option value="6">11:30</option>
+                                        <option value="7">12:00</option>
+                                        <option value="8">12:30</option>
+                                        <option value="9">13:00</option>
+                                        <option value="10">13:30</option>
+                                        <option value="11">14:00</option>
+                                        <option value="12">14:30</option>
+                                        <option value="13">15:00</option>
+                                        <option value="14">15:30</option>
+                                        <option value="15">16:00</option>
+                                        <option value="16">16:30</option>
+                                        <option value="17">17:00</option>
+                                        <option value="18">17:30</option>
+                                        <option value="19">18:00</option>
+                                        <option value="20">18:30</option>
+                                        <option value="21">19:00</option>
+                                        <option value="22">19:30</option>
+                                        <option value="23">20:00</option>
+                                        <option value="24">20:30</option>
+                                        
+                                    </select>
+                                    
+                                    </div>
+                           
+
+                           
+                        </div>
+                      
+                    </form>  
+                    <button class="btn">Odoslať</button>
+                </div>
+            </div>
+            <div id="menu">
+                <h2>Aktuálna ponuka</h2>
+                <ul class="menu_type">
+                    <li id="btn1">Káva</li>
+                    <li id="btn2">Horúca čokoláda</li>
+                    <li id="btn3">Limonády</li>
+                    <li id="btn4">Dezerty</li>
+                    <li id="btn5">Iba u nás</li>
+                </ul>
+                
+
+
+            </div>
+            
+            <div class="swiper mySwiper swiper1">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img class="product" src="img/espresso.png" />
+                    <div class="desc">
+                      <div class="left_side">
+                        <h3>Espresso</h3>
+                        <p>30ml</p>  
+                        <div class="description">
+                          <img src="img/coffee-beans_full.png" alt="intensity">
+                          <img src="img/coffee-beans_full.png" alt="intensity">
+                          <img src="img/coffee-beans_full.png" alt="intensity">
+                        </div>
+                      </div>
+                      <div class="price">
+                        <span>1,80€</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="img/espresso-lungo.png" />
+                    <div class="desc">
+                      <div class="left_side">
+                        <h3>Lungo</h3>
+                        <p>100ml</p>  
+                        <div class="description">
+                          <img src="img/coffee-beans_full.png" alt="intensity">
+                          <img src="img/coffee-beans_full.png" alt="intensity">
+                          <img src="img/coffee-beans_full.png" alt="intensity">
+                        </div>
+                      </div>
+                      <div class="price">
+                        <span>2,50€</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="img/cappucino.png" />
+                    <div class="desc">
+                      <div class="left_side">
+                        <h3>Cappucino</h3>
+                        <p>150ml</p>  
+                        <div class="description">
+                          <img src="img/coffee-beans_full.png" alt="intensity">
+                          <img src="img/coffee-beans_full.png" alt="intensity">
+                          <img src="img/coffee-beans.png" alt="intensity">
+                        </div>
+                      </div>
+                      <div class="price">
+                        <span>3,20€</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="img/flatwhite.png" />
+                    <div class="desc">
+                      <div class="left_side">
+                        <h3>Flatwhite</h3>
+                        <p>180ml</p>  
+                        <div class="description">
+                          <img src="img/coffee-beans_full.png" alt="intensity">
+                          <img src="img/coffee-beans_full.png" alt="intensity">
+                          <img src="img/coffee-beans_full.png" alt="intensity">
+                        </div>
+                      </div>
+                      <div class="price">
+                        <span>3,50€</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="img/dalgona-coffee.png" />
+                    <div class="desc">
+                      <div class="left_side">
+                        <h3>Dalgona coffee</h3>
+                        <p>220ml</p>  
+                        <div class="description">
+                          <img src="img/coffee-beans_full.png" alt="intensity">
+                          <img src="img/coffee-beans_full.png" alt="intensity">
+                          <img src="img/coffee-beans_full.png" alt="intensity">
+                        </div>
+                      </div>
+                      <div class="price">
+                        <span>4€</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="img/iced-coffee.png" />
+                    <div class="desc">
+                      <div class="left_side">
+                        <h3>Ľadová káva</h3>
+                        <p>250ml</p>  
+                        <div class="description">
+                          <img src="img/coffee-beans_full.png" alt="intensity">
+                          <img src="img/coffee-beans_full.png" alt="intensity">
+                          <img src="img/coffee-beans_full.png" alt="intensity">
+                        </div>
+                      </div>
+                      <div class="price">
+                        <span>3,50€</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper mySwiper swiper2">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="img/kakao.png" />
+                    <div class="desc">
+                      <div class="left_side">
+                        <h3>Horúca čokoláda</h3>
+                        <p>100ml</p>  
+                        <div class="description">
+                        <p>Horká, mliečna, biela</p>
+                        </div>
+                      </div>
+                      <div class="price">
+                        <span>1,80€</span>
+                      </div>
+                    </div>
+                  </div>
+    
+                </div>
+              </div>
+
+
+              <div class="swiper mySwiper swiper3">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="img/lemonade.png" />
+                    <div class="desc">
+                      <div class="left_side">
+                        <h3>Citrónova limonáda</h3>
+                        <p>300ml</p>  
+                      </div>
+                      <div class="price">
+                        <span>4,30€</span>
+                      </div>
+                   
+                  </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="img/raspberry_lemonade.png" />
+                    <div class="desc">
+                      <div class="left_side">
+                        <h3>Malinová limonáda</h3>
+                        <p>300ml</p>  
+                      </div>
+                      <div class="price">
+                        <span>4,30€</span>
+                      </div>
+                   
+                  </div>
+                  </div>
+
+                  
+                 
+                </div>
+              </div>
+
+
+              <div class="swiper mySwiper swiper4">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="img/muffins.png"/>
+                    <div class="desc">
+                      <div class="left_side">
+                        <h3>Čokoládove muffiny</h3>
+                        <p>1ks</p>  
+                      </div>
+                      <div class="price">
+                        <span>2,20€</span>
+                      </div>
+                   
+                  </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="img/pancakes.png" />
+                    <div class="desc">
+                      <div class="left_side">
+                        <h3>Palacinky</h3>
+                        <p>2ks</p>  
+                        <div class="description">
+                          <p>tvaroh, nutella, džem</p>
+                          </div>
+                      </div>
+                      <div class="price">
+                        <span>3,50€</span>
+                      </div>
+                   
+                  </div>
+                  </div>
+                  
+                </div>
+              </div>
+
+              <div class="swiper mySwiper swiper5">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="img/oreo_tuffles.png"/>
+                    <div class="desc">
+                      <div class="left_side">
+                        <h3>Oreo tuffles</h3>
+                        <p>1ks</p>  
+                      </div>
+                      <div class="price">
+                        <span>1,50€</span>
+                      </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+
+            <div id="gallery">
+          
+              <div id="animated-thumbnails">
+                <a href="img/interior1.png">
+                    <img src="img/interior1.jpg" />
+                </a>
+                <a href="img/interior2.jpg">
+                    <img src="img/interior2.jpg" />
+                </a>
+                <a href="img/interior3.jpg">
+                  <img src="img/interior3.jpg" />
+              </a>
+              <a href="img/interior4.jpg">
+                <img src="img/interior4.jpg" />
+            </a>
+          </div>
+
+             <div class="aside">
+              <h2>Priestory našej kaviarne</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus temporibus incidunt dolor nostrum. Alias, nobis ipsam aperiam amet fuga rerum quia?
+                 Eos temporibus veritatis amet voluptas iste magni corporis illum.</p>
+            </div> 
+
+           </div>
+         
+          
         </section>
-        <script type="text/javascript" src="js/script.js"></script>
+        <footer>
+          <div id="footer-text">
+            <h3>moca cafe</h3>
+            
+              <ul class="components">
+                <li><a href="#aboutUs">O nás</a></li>
+                <li><a href="#reservation">Rezervácia</a></li>
+                <li><a href="#menu">Ponuka</a></li>
+                <li><a href="#gallery">Priestory</a></li>
+                <li><a href="#footer-text">Kontakt</a></li>
+              </ul>
+        
+             <div class="icons_box"> 
+            <a href="https://www.facebook.com/"><i class="fa fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <div class="footer-contact">
+          <p>+421901 234 567</p>
+          <p>+421901 234 567</p>
+          <p>mocacafe@gmail.com</p>
+          <p>Nitrianska 26, Bratislava</p>
+        </div>
+         <div class="img-gradient">
+           <img src="./img/footer.png" alt="footer-coffee">
+         </div>
+         <p>©2022 / Jamrichova</p>
+
+        
+         
+         
+
+
+          </div>
+
+
+         
+          
+        </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+        
     </body>
 </html>

@@ -64,7 +64,7 @@
                     <p>Príjemné prostredie</p> 
                  </div>
                  <div class="each">
-                    <img src="/booking.f00b0069.png" alt="cup_icon"> 
+                    <img src="/reserve.a750e1f7.png" alt="cup_icon"> 
                     <p>Online rezervácia</p> 
                  </div>
                  <div class="each">
@@ -72,7 +72,54 @@
                     <p>Pet friendly</p> 
                  </div>
             </div>
+            <div class="reservation">
+                <h2>Rezervácia</h2>
+                <h3>Rezervujte si svoj stôl</h3>
+                <div class="form-reserve">
+                    
+               
+                <form method="post">
+                    <div id="form_section">
+                        <input type="text" name="firstname" placeholder="Meno" required="true">
+                           <input type="text" name="lastname" placeholder="Priezvisko" required="true">
+                        <input type="tel" name="phone" placeholder="Telefónne číslo" required="true">
+                    
+                    </div>
+                    <div id="form_section">
+                    <label for="form-table"><span>Stôl</span>
+                        
+                        <!-- <datalist id="tables">
+                            <option value="Stôl 1">
+                            <option value="Stôl 2">
+                            <option value="Stôl 3">
+                            <option value="Stôl 4">
+                            <option value="Stôl 5">
+                        </datalist> -->
+                        
+                        <select name="form-table" class="form-table">
+                            <option value="">1 (kaviareň)</option>
+                            <option value="">2 (kaviareň)</option>
+                            <option value="">3 (kaviareň)</option>
+                            <option value="">4 (terasa)</option>
+                            <option value="">5 (terasa)</option>
+                        </select>
+                    </label>
+                    <label for="date">Dátum</label>
+                    <span class="datepicker-toggle">
+                        <span class="datepicker-toggle-button"></span>
+                        <input type="date" name="date" class="datepicker-input">
+                      </span>
+                      <label for="time">Čas príchodu</label>
+
+                    <input type="time" id="time" name="time" min="09:00" max="22:00" required="">
+                    </div>
+                </form>
+                </div>
+            </div>
         </section>
+
+
+
         <script type="text/javascript" src="/script.d573be0b.js"></script>
     </body>
 </html>
